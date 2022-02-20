@@ -1,0 +1,95 @@
+********************************************************************************************************************************************************
+ps -aux| grep java
+ps -ef | grep java
+java -version
+yum list | grep jdk-devel
+sudo yum install java-latest-openjdk-devel.x86_64 -y
+whereis jvm
+which java
+whereis java
+sudo yum install mlocate -y
+sudo updatedb
+locate openjdk
+readlink -f $(which java)
+
+/usr/lib/jvm/java-17-openjdk-17.0.1.0.12-1.rolling.el7.x86_64/bin/java
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-17.0.1.0.12-1.rolling.el7.x86_64/bin/java
+
+sudo yum install nano -y
+nano ~/.bashrc
+
+export JAVA_HOME=/usr/lib/jvm/jre-17-openjdk
+export PATH=$PATH:$JAVA_HOME
+
+source ~/.bashrc
+
+
+https://icinga.com/docs/icinga-2/latest/doc/02-installation/05-CentOS/
+------------------------------------------- Run -------------------------------------------
+
+yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-mapreduce-examples.jar pi 10 100
+********************************************************************************************************************************************************
+********************************************************************************************************************************************************
+-------------------------------------------   Trash   -------------------------------------------
+<property>
+     <name>fs.trash.checkpoint.interval</name>
+-    <value>60</value>
++    <value>1440</value>
+   </property>
+
+hdfs dfs -mkdir /user/imran/Trs/Test
+hdfs dfs -ls /user/imran/
+
+hdfs dfs -count -h /user/imran/Trs
+hdfs dfs -ls /user/imran/Trs
+
+touch testfile
+touch testfile1
+touch testfile2
+vim testfile
+
+
+Testing This File
+For Trash In
+hadoop CDP
+
+ls
+
+hdfs dfs -copyFromLocal testfile /user/imran/Trs
+hdfs dfs -put inputfile.txt /user/imran/Trs
+
+sudo -i hdfs hdfs dfs -rm /user/imran/Trs/testfile2
+
+22/02/20 11:06:13 INFO fs.TrashPolicyDefault: Moved: 'hdfs://instance-1.us-central1-a.c.sixth-clone-339414.internal:8020/user/imran/Trs/testfile2' to trash at: hdfs://instance-1.us-central1-a.c.sixth-clone-339414.internal:8020/user/hdfs/.Trash/Current/user/imran/Trs/testfile2
+
+22/02/20 11:06:13 INFO fs.TrashPolicyDefault: Moved: 'hdfs://instance-1.us-central1-a.c.sixth-clone-339414.internal:8020/user/imran/Trs/testfile2' to trash at: hdfs://instance-1.us-central1-a.c.sixth-clone-339414.internal:8020/user/hdfs/.Trash/Current/user/imran/Trs/testfile2
+
+sudo -u hdfs hdfs dfs -cat /user/hdfs/.Trash/Current/user/imran/Trs/testfile2
+sudo -u hdfs hdfs dfs -ls /user/hdfs/.Trash/Current/user/imran/Trs/
+---------- Delete File Like Shift + ctrl + Delete ------------------------  
+[hdusr@instance-1 ~]$ sudo -u hdfs hdfs dfs -rm -r -skipTrash /user/imran/Trs/testfile1
+Deleted /user/imran/Trs/testfile1
+
+core-site.xml
+
+<property>
+   <name>fs.trash.interval</name>
+   <value>30</value>
+ </property>
+ 
+
+ 
+sudo -u hdfs hdfs dfs -mv /user/hdfs/.Trash/Current/user/imran/Trs/inputfile.txt /user/imran/Trs/
+ 
+ hadoop distcp hdfs://instance-1.us-central1-a.c.sixth-clone-339414.internal:8020/user/hdfs/.Trash/Current/user/imran/Trs/delt1645361595604 hdfs://instance-1.us-central1-a.c.sixth-clone-339414.internal:8020/user/imran/Trs/delt
+ 
+22/02/20 12:53:15 INFO fs.TrashPolicyDefault: Moved: 'hdfs://instance-1.us-central1-a.c.sixth-clone-339414.internal:8020/user/imran/Trs/delt' to trash at: hdfs://instance-1.us-central1-a.c.sixth-clone-339414.internal:8020/user/hdfs/.Trash/Current/user/imran/Trs/delt1645361595604
+
+sudo -u hdfs hadoop distcp hdfs://instance-1.us-central1-a.c.sixth-clone-339414.internal:8020/user/hdfs/.Trash/Current/user/imran/Trs/delt1645361595604 hdfs://instance-1.us-central1-a.c.sixth-clone-339414.internal:8020/user/imran/Trs/delt
+
+********************************************************************************************************************************************************
+
+
+
+
+
